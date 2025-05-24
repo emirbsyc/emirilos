@@ -17,13 +17,15 @@
             color: #333;
         }
         .container {
-            cursor: pointer; /* Tıklanabilir olduğunu belirtir */
+            cursor: pointer;
             text-align: center;
             padding: 40px;
             border-radius: 20px;
             background-color: #ffffff;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease-in-out;
+            text-decoration: none; /* Mavi çizgiyi kaldır */
+            color: inherit; /* Link rengini varsayılan yapar */
         }
         .container:hover {
             transform: scale(1.05);
@@ -34,7 +36,7 @@
             margin-bottom: 20px;
         }
         .emoji {
-            font-size: 8em; /* Büyük emoji */
+            font-size: 8em;
             line-height: 1;
         }
         p {
@@ -42,13 +44,34 @@
             font-weight: bold;
             margin-top: 10px;
         }
+        .message {
+            color: #ff0000; /* Hata mesajı rengi */
+            font-size: 1.5em;
+            margin-top: 20px;
+            opacity: 0; /* Başlangıçta gizli */
+            transition: opacity 0.5s ease-in-out;
+        }
+        .message.show {
+            opacity: 1; /* Gösterildiğinde görünür */
+        }
     </style>
 </head>
 <body>
-    <a href="dunya.html" class="container">
+    <div class="container" onclick="showErrorMessage('dunya.html')">
         <span class="emoji">🌕</span>
         <h1>Emir, İloş'u Ay Kadar Seviyor!</h1>
         <p>(Tıkla, ne kadar büyüdüğünü gör!)</p>
-    </a>
+    </div>
+    <div id="errorMessage" class="message">Yanlış! Ama yaklaştın...</div>
+
+    <script>
+        function showErrorMessage(nextPage) {
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.classList.add('show'); // Mesajı göster
+            setTimeout(() => {
+                window.location.href = nextPage; // Belirli bir süre sonra diğer sayfaya yönlendir
+            }, 1500); // 1.5 saniye sonra geçiş yap
+        }
+    </script>
 </body>
 </html>
