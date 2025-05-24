@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emir, İloş'u Dünya Kadar Seviyor</title>
     <style>
-        /* CSS kodu ay.html ile aynı */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
@@ -16,6 +15,8 @@
             margin: 0;
             background-color: #f0f8ff;
             color: #333;
+            padding: 20px;
+            box-sizing: border-box;
         }
         .container {
             cursor: pointer;
@@ -27,6 +28,8 @@
             transition: transform 0.3s ease-in-out;
             text-decoration: none;
             color: inherit;
+            max-width: 90%;
+            width: 500px;
         }
         .container:hover {
             transform: scale(1.05);
@@ -35,15 +38,12 @@
             color: #e74c3c;
             font-size: 3em;
             margin-bottom: 20px;
+            word-break: break-word;
         }
         .emoji {
             font-size: 8em;
             line-height: 1;
-        }
-        p {
-            font-size: 1.8em;
-            font-weight: bold;
-            margin-top: 10px;
+            margin-bottom: 10px;
         }
         .message {
             color: #ff0000;
@@ -51,9 +51,25 @@
             margin-top: 20px;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
+            text-align: center;
         }
         .message.show {
             opacity: 1;
+        }
+        /* Mobil Cihazlar İçin Medya Sorgusu */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            .emoji {
+                font-size: 6em;
+            }
+            .message {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
@@ -61,7 +77,6 @@
     <div class="container" onclick="showErrorMessage('gunes.html')">
         <span class="emoji">🌍</span>
         <h1>Emir, İloş'u Dünya Kadar Seviyor!</h1>
-        <p>(Tıkla, daha da büyüyor!)</p>
     </div>
     <div id="errorMessage" class="message">Yanlış! Ama yaklaştın...</div>
 
