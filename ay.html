@@ -15,6 +15,8 @@
             margin: 0;
             background-color: #f0f8ff;
             color: #333;
+            padding: 20px; /* Kenarlardan boşluk bırak */
+            box-sizing: border-box; /* Padding'i genişliğe dahil et */
         }
         .container {
             cursor: pointer;
@@ -26,33 +28,50 @@
             transition: transform 0.3s ease-in-out;
             text-decoration: none; /* Mavi çizgiyi kaldır */
             color: inherit; /* Link rengini varsayılan yapar */
+            max-width: 90%; /* Telefonlarda taşmayı engelle */
+            width: 500px; /* Maksimum genişlik */
         }
         .container:hover {
             transform: scale(1.05);
         }
         h1 {
             color: #e74c3c;
-            font-size: 3em;
+            font-size: 3em; /* Masaüstü için */
             margin-bottom: 20px;
+            word-break: break-word; /* Uzun kelimeleri böler */
         }
         .emoji {
-            font-size: 8em;
+            font-size: 8em; /* Masaüstü için */
             line-height: 1;
+            margin-bottom: 10px; /* Emoji altına boşluk */
         }
-        p {
-            font-size: 1.8em;
-            font-weight: bold;
-            margin-top: 10px;
-        }
+        /* "Yanlış" mesajı için stil */
         .message {
-            color: #ff0000; /* Hata mesajı rengi */
-            font-size: 1.5em;
+            color: #ff0000;
+            font-size: 1.5em; /* Masaüstü için */
             margin-top: 20px;
             opacity: 0; /* Başlangıçta gizli */
             transition: opacity 0.5s ease-in-out;
+            text-align: center;
         }
         .message.show {
             opacity: 1; /* Gösterildiğinde görünür */
+        }
+
+        /* Mobil Cihazlar İçin Medya Sorgusu */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.2em; /* Telefonlarda daha küçük */
+            }
+            .emoji {
+                font-size: 6em; /* Telefonlarda daha küçük */
+            }
+            .message {
+                font-size: 1.2em; /* Telefonlarda daha küçük */
+            }
         }
     </style>
 </head>
@@ -60,7 +79,6 @@
     <div class="container" onclick="showErrorMessage('dunya.html')">
         <span class="emoji">🌕</span>
         <h1>Emir, İloş'u Ay Kadar Seviyor!</h1>
-        <p>(Tıkla, ne kadar büyüdüğünü gör!)</p>
     </div>
     <div id="errorMessage" class="message">Yanlış! Ama yaklaştın...</div>
 
