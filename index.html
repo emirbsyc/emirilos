@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emir'in İloş'a Sevgisi</title>
-
     <style>
-        /* Buradan itibaren CSS kodunuz başlıyor */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
@@ -15,45 +13,35 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #f0f8ff; /* Açık mavi */
+            background-color: #f0f8ff;
             color: #333;
         }
-
-        h1 {
-            color: #e74c3c; /* Kırmızımsı ton */
-            margin-bottom: 30px;
-            font-size: 2.5em;
-        }
-
-        .love-scale p {
-            background-color: #ffffff;
-            border: 2px solid #ffcc00; /* Sarımsı kenarlık */
-            padding: 15px 30px;
-            margin: 10px 0;
-            border-radius: 25px;
-            font-size: 1.5em;
+        .start-button {
+            display: inline-block;
+            padding: 20px 40px;
+            font-size: 2em;
             font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 300px; /* Genişlik sabitleme */
-            transition: transform 0.2s ease-in-out;
+            color: #ffffff;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 15px;
+            text-decoration: none; /* Alt çizgiyi kaldırır */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
-
-        .love-scale p:hover {
-            transform: scale(1.05);
+        .start-button:hover {
+            background-color: #c0392b;
+            transform: translateY(-5px);
         }
-        /* CSS kodunuz burada bitiyor */
+        h1 {
+            color: #2c3e50;
+            font-size: 3em;
+            margin-bottom: 40px;
+        }
     </style>
-
 </head>
 <body>
     <h1>Emir, İloş'u Ne Kadar Seviyor?</h1>
-    <div class="love-scale">
-        <p>Ay Kadar 🌕</p>
-        <p>Güneş Kadar ☀️</p>
-        <p>Dünya Kadar 🌍</p>
-        <p>Evren Kadar 🌌</p>
-        <p>Sonsuz Kadar ❤️‍🔥</p>
-    </div>
+    <a href="ay.html" class="start-button">Sevgi Ölçeğini Başlat!</a>
 </body>
 </html>
