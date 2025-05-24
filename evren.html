@@ -25,6 +25,8 @@
             background-color: #ffffff;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease-in-out;
+            text-decoration: none;
+            color: inherit;
         }
         .container:hover {
             transform: scale(1.05);
@@ -43,13 +45,34 @@
             font-weight: bold;
             margin-top: 10px;
         }
+        .message {
+            color: #ff0000;
+            font-size: 1.5em;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .message.show {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
-    <a href="sonsuz.html" class="container">
+    <div class="container" onclick="showErrorMessage('sonsuz.html')">
         <span class="emoji">🌌</span>
         <h1>Emir, İloş'u Evren Kadar Seviyor!</h1>
         <p>(Tıkla ve sonu olmayan sevgiye ulaş!)</p>
-    </a>
+    </div>
+    <div id="errorMessage" class="message">Yanlış! Ama yaklaştın...</div>
+
+    <script>
+        function showErrorMessage(nextPage) {
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.classList.add('show');
+            setTimeout(() => {
+                window.location.href = nextPage;
+            }, 1500);
+        }
+    </script>
 </body>
 </html>
