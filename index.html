@@ -16,6 +16,13 @@
             background-color: #f0f8ff;
             color: #333;
         }
+        h1 {
+            color: #2c3e50;
+            font-size: 3em; /* Masaüstü için */
+            margin-bottom: 40px;
+            text-align: center;
+            padding: 0 15px; /* Küçük ekranlarda taşmayı engellemek için */
+        }
         .start-button {
             display: inline-block;
             padding: 20px 40px;
@@ -25,7 +32,7 @@
             background-color: #e74c3c;
             border: none;
             border-radius: 15px;
-            text-decoration: none; /* Alt çizgiyi kaldırır */
+            text-decoration: none;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
             transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
@@ -33,15 +40,21 @@
             background-color: #c0392b;
             transform: translateY(-5px);
         }
-        h1 {
-            color: #2c3e50;
-            font-size: 3em;
-            margin-bottom: 40px;
+
+        /* Mobil Cihazlar İçin Medya Sorgusu */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2em; /* Telefonlarda daha küçük */
+            }
+            .start-button {
+                font-size: 1.5em; /* Telefonlarda daha küçük */
+                padding: 15px 30px;
+            }
         }
     </style>
 </head>
 <body>
     <h1>Emir, İloş'u Ne Kadar Seviyor?</h1>
-    <a href="ay.html" class="start-button">Sevgi Ölçeğini Başlat!</a>
+    <a href="ay.html" class="start-button">Başla ❤️</a>
 </body>
 </html>
