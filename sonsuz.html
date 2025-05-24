@@ -15,6 +15,8 @@
             margin: 0;
             background-color: #f0f8ff;
             color: #333;
+            padding: 20px;
+            box-sizing: border-box;
         }
         .container {
             text-align: center;
@@ -22,21 +24,40 @@
             border-radius: 20px;
             background-color: #ffffff;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            /* Bu sayfada tıklama olmadığı için transition ve cursor: pointer yok */
+            max-width: 90%;
+            width: 500px;
         }
         h1 {
             color: #e74c3c;
             font-size: 3em;
             margin-bottom: 20px;
+            word-break: break-word;
         }
         .emoji {
             font-size: 8em;
             line-height: 1;
+            margin-bottom: 10px;
         }
         p {
             font-size: 1.8em;
             font-weight: bold;
             margin-top: 10px;
+        }
+
+        /* Mobil Cihazlar İçin Medya Sorgusu */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            .emoji {
+                font-size: 6em;
+            }
+            p {
+                font-size: 1.4em;
+            }
         }
     </style>
 </head>
